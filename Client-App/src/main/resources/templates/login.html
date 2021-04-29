@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Client-App Login</title>
+        <link rel="stylesheet" th:href="@{/css/login.css}">
+        <div th:replace="fragments/header-link :: header-link"></div>
+    </head>
+
+    <body>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <div class="container d-flex justify-content-center d-flex align-items-center flex-column" id="_wrapper">
+                    <p th:text="${param.error} ? 'Username or Password Incorrect' : ''"></p>
+                    <p th:text="${param.logout} ? 'You have been logout' : ''"></p>
+                    <form th:action="@{/login}" method="post" th:object="${auth}" class="needs-validation" novalidate>
+                        <h1>Sign in</h1>
+                        <br><br>
+                        <div class="form-group mb-5">
+                            <input type="text" th:field="*{userName}" placeholder="Username" class="form-control" required/>
+                            <div class="invalid-feedback">
+                                Please enter your username.
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-5">
+                            <input type="password" th:field="*{userPassword}" placeholder="Password" class="form-control" required/>
+                            <div class="invalid-feedback">
+                                Please enter your password.
+                            </div>
+                        </div>
+                        <button onclick='login()'>Sign In</button>
+                    </form>
+                </div>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <h5>Welcome to MCC-47 Group 4</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script th:src="@{/js/form-validation.js}"></script>
+        <script th:src="@{/js/sweet-alert.js}"></script>
+
+    </body>
+</html>

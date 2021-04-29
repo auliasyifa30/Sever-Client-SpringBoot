@@ -1,0 +1,37 @@
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+<div class="header-app" th:fragment="header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <div class="profile-sidebar">
+                        <div class="profile-userpic mr-4">
+                            <img class="rounded-circle article-img" src="https://www.w3schools.com/howto/img_avatar2.png" 
+                                 alt="Image" height="30" width="30">
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-info" data-toggle="dropdown">
+                            <div sec:authorize="isAuthenticated()">
+                                <span sec:authentication="name">Username</span>   
+                            </div>
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" th:href="@{/profile}">Profile</a>
+                            <a id="btn-logout" th:href="@{/logout}" aria-hidden="true" class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+

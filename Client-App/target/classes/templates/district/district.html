@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Client-App District</title>
+        <div th:replace="fragments/header-link :: header-link"></div>     
+</head>
+
+<body>
+    <div th:replace="fragments/sidebar :: sidebar"></div>
+    <div class="content-container">
+        <div th:replace="fragments/header :: header"></div>
+
+        <div class="container my-3">
+
+            <h3>Data District</h3>
+            <br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-district" th:onclick="resetForm()"
+                    sec:authorize="hasAuthority('create')"> 
+                <i class="fas fa-plus" aria-hidden="true"></i> Add District
+            </button>
+            <br>
+            <br>
+            <table id="DistrictTable" class="table table-bordered table-striped table-hover-col-sm-3">
+                <thead>
+
+                    <tr>
+                        <td>District Id</td>
+                        <td>Kota-Kabupaten</td>
+                        <td>District Name</td>
+                        <td>Province Name</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                
+                <script th:src="@{/js/district/index.js}"></script>
+                <tbody>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>                
+
+    <div th:replace="fragments/dataTable :: dataTable"></div>   
+    <script>
+        $(document).ready(function () {
+            var table = $('#districtTable').DataTable();
+        });
+    </script>
+
+    <div th:replace="district/modal-add :: modal-add"></div>
+    <div th:replace="district/modal-edit :: modal-edit"></div>
+    <script th:src="@{/js/form-validation.js}"></script>
+    <script th:src="@{/js/sweet-alert.js}"></script>
+    
+
+</body>
+</html>

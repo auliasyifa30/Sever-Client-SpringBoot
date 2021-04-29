@@ -1,0 +1,35 @@
+<div class="sidebar-container" th:fragment="sidebar">
+
+    <div class="sidebar-logo">Client-Apps</div>
+
+    <ul class="sidebar-navigation my-3">
+        <li class="header">MENU</li>
+        <li th:class="${#strings.contains(#httpServletRequest.requestURI,'/dashboard')} ? 'menu-item active' : 'menu-item'">
+            <a th:href="@{/dashboard}" class="menu-link">
+                <i class="fa fa-home" aria-hidden="true"></i> Dashboard
+            </a>
+        </li>
+        
+        <li th:class="${#strings.contains(#httpServletRequest.requestURI,'/province')} ? 'menu-item active' : 'menu-item'"
+            sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/province}" class="menu-link">
+                <i class="fa fa-folder-open" aria-hidden="true"></i> Data Province
+            </a>
+        </li>
+
+        <li th:class="${#strings.contains(#httpServletRequest.requestURI,'/district')} ? 'menu-item active' : 'menu-item'">
+            <a th:href="@{/district}" class="menu-link">
+                <i class="fa fa-folder-open" aria-hidden="true"></i> Data District
+            </a>
+        </li>
+        
+        <li th:class="${#strings.contains(#httpServletRequest.requestURI,'/data-developer')} ? 'menu-item active' : 'menu-item'">
+            <a th:href="@{/data-developer}" class="menu-link">
+                <i class="fa fa-users" aria-hidden="true"></i> Data Developer
+            </a>
+        </li>
+        
+
+    </ul>
+       
+</div>

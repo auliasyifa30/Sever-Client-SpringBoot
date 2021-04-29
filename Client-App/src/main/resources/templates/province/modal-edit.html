@@ -1,0 +1,37 @@
+<div class="modal-edit" th:fragment="modal-edit">
+    <div class="modal fade" id="update-province" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Province</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="provinceUpdate" class="needs-validation" novalidate>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="provinceId">Province Id</label>
+                            <input type="number" id="province-id" class="form-control" placeholder="Province Id" required>
+                            <div class="invalid-feedback">
+                                Please enter your province id.
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="provinceName">Province Name</label>
+                            <input type="text" id="province-name" class="form-control" placeholder="Province Name" required>
+                            <div class="invalid-feedback">
+                                Please enter your province id.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-top-0 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button data-dismiss="modal" class="btn btn-danger col-2">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

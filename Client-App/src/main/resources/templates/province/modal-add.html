@@ -1,0 +1,43 @@
+<div class="modal-add" th:fragment="modal-add">
+    
+    <div class="modal fade" id="create-province" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Province</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form id="provinceForm" class="needs-validation" novalidate>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="provinceId">Province Id</label>
+                            <input type="number" id="provinceId" class="form-control" placeholder="Province Id" required>
+                            <div class="invalid-feedback">
+                                Please enter your province id.
+                            </div>
+                            <br>   
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="provinceName">Province Name</label>
+                            <input type="text" id="provinceName" class="form-control" placeholder="Province Name" required> 
+                            <div class="invalid-feedback">
+                                Please enter your province name.
+                            </div><br>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer border-top-0 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button class="btn btn-danger col-2" data-dismiss="modal">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
